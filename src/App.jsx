@@ -1,19 +1,14 @@
-import Card from "../components/Card"
+import Card from "../components/Card";
+import { range } from "/src/tools.js";
 
 function App() {
-
-  for(let i = 0; i < 51; i++){
-    
-  }
-
-
   return (
     <div className="container">
-      <Card PokeId={1}></Card>
-      <Card PokeId={2}></Card>
-      <Card PokeId={3}></Card>
+      {Array(1010).fill(0).map((poke, i) => (
+        <Card key={`pokemon${i + 1}`} PokeId={i + 1}></Card>
+      ))}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

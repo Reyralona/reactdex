@@ -1,24 +1,111 @@
-.pokecard{
-    border: 1px solid rgb(220, 220, 220);
-    border-radius: 5px;
-    padding: 10px;
+.pokecard {
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.pokecardcontent{
-    display: flex;
-    flex-direction: column;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.pokecardcontent {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.pokecardimage{
-    width: 250px;
-    height: 250px;
+.pokecardimage {
+  width: 250px;
+  height: 250px;
 }
 
-.pokecardid{
-    font-size: 2.5rem;
-    color: grey;
+.pokecardid {
+  font-size: 2.5rem;
+  color: grey;
 }
-.pokecardname{
-    font-size: 2rem;
+.pokecardname {
+  font-size: 2rem;
+}
+
+.pokecardtypes {
+  display: flex;
+  gap: 10px;
+}
+
+.type-item {
+  /* 1rem */
+  width: calc(50% - 1%);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 100%;
+}
+.type-grass {
+  color: black;
+  background-color: limegreen;
+}
+.type-poison {
+  color: white;
+  background-color: palevioletred;
+}
+
+.type-fire {
+  color: white;
+  background-color: rgb(255, 118, 69);
+}
+
+.type-water {
+  color: white;
+  background-color: dodgerblue;
+}
+
+.type-flying {
+  background: linear-gradient(cyan 50%, rgb(212, 212, 212) 0%);
+}
+
+.type-bug {
+  color: white;
+  background-color: green;
+}
+
+.type-normal {
+  background-color: grey;
+}
+
+.type-electric {
+  background-color: yellow;
+}
+.type-ground {
+  background: linear-gradient(yellow 50%, rgb(206, 113, 26) 0%);
+}
+.type-fairy {
+  background-color: pink;
+}
+.type-fighting {
+  color: white;
+  background-color: orangered;
+}
+.type-psychic {
+  color: white;
+  background-color: purple;
+}
+.type-rock {
+  color: white;
+  background-color: darkorange;
+}
+.type-steel {
+  background-color: lightblue;
+}
+.type-ghost {
+  color: white;
+  background-color: rgb(99, 55, 139);
+}
+.type-ice {
+  background-color: aqua;
+}
+.type-dragon {
+  color: white;
+  background: linear-gradient(dodgerblue 50%, orangered 0%);
+}
+
+.type-dark {
+  color: white;
+  background-color: grey;
 }

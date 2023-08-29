@@ -1,9 +1,6 @@
 import { React, useState, useEffect } from "react";
-import "../src/card.css"
-
-function title(str){
-    return str.slice(0, 1).toUpperCase() + str.slice(1, str.length)
-}
+import "../src/card.css";
+import { title } from "/src/tools.js";
 
 export default function Card(Props) {
   const [data, setData] = useState(null);
@@ -25,17 +22,36 @@ export default function Card(Props) {
       });
   }, []);
 
- 
-
-  return <div className="pokecard">
-    {loading && <div>Loading...</div>}
-    {error && (<div>Error!</div>)}
-    {data && 
+  return (
+    <div className="pokecard">
+      {loading && <div></div>}
+      {error && <div>Error!</div>}
+      {data && (
         <div className="pokecardcontent">
-            <img src={data.sprites.other["official-artwork"].front_default} className="pokecardimage"/>
-            <div className="pokecardid">#{data.id.toString().padStart(4, '0')}</div>
-            <div className="pokecardname">{title(data.name)}</div>
+          <img
+            alt={data.name}
+            src={data.sprites.other["official-artwork"].front_default}
+            className="pokecardimage"
+          />
+          <div className="pokecardid">
+            #{data.id.toString().padStart(4, "0")}
+          </div>
+          <div className="pokecardname">{title(data.name)}</div>
+          <div className="pokecardtypes">
+            {data.types.map((type, i) => {
+              let typename = data.types[i].type.name;
+              return (
+                <div
+                  key={`${data.name}_type_${i}_${typename}`}
+                  className={`type-item type-${typename}`}
+                >
+                  {title(typename)}
+                </div>
+              );
+            })}
+          </div>
         </div>
-    }
-  </div>;
+      )}
+    </div>
+  );
 }
